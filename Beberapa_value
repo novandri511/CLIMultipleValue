@@ -15,12 +15,17 @@ namespace Coba_multiple_argument
         private void OnExecute()
         {
 
-            Console.WriteLine(string.Join(" ", Files));
-           
+            string nya = string.Join(" ", Files);
+            string toUpper = nya.ToUpper();
+            string toLower = nya.ToLower();
+            string toCapitalize = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nya.ToLower());
+            Console.WriteLine(toUpper);
+            Console.WriteLine(toLower);
+            Console.WriteLine(toCapitalize);
 
 
         }
-
+       
         public static int Main(string[] args) => CommandLineApplication.Execute<Program>(args);
     }
 }
